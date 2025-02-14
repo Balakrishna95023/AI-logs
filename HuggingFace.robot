@@ -1,7 +1,7 @@
 *** Settings ***
 Library    RequestsLibrary
 *** Variables ***
-${key}    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
+${key}    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
 ${URL}    https://api-inference.huggingface.co/models/gpt2
 
 *** Test Cases ***
