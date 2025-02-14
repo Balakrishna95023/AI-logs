@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.6 on win32)" generated="2025-02-14T12:22:43.149034" rpa="false" schemaversion="5">
+<suite id="s1" name="Robotframework--AI-POC" source="C:\pycharmRobot\Robotframework--AI-POC">
+<suite id="s1-s1" name="HuggingFace" source="C:\pycharmRobot\Robotframework--AI-POC\HuggingFace.robot">
+<test id="s1-s1-t1" name="Test Hugging face AI" line="8">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-14T12:22:43.890657" level="INFO">${headers} = {'Authorization': 'Bearer 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', 'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Authorization=Bearer ${key}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-14T12:22:43.890657" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-14T12:22:43.891660" level="INFO">${data} = {'inputs': '"Generate a python testcase."'}</msg>
+<var>${data}</var>
+<arg>inputs="Generate a python testcase."</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-14T12:22:43.891660" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2025-02-14T12:22:55.175393" level="INFO">POST Request : url=https://api-inference.huggingface.co/models/gpt2 
+ path_url=/models/gpt2 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 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', 'Content-Type': 'application/json', 'Content-Length': '45'} 
+ body=b'{"inputs": "\\"Generate a python testcase.\\""}' 
+ </msg>
+<msg time="2025-02-14T12:22:55.175393" level="INFO">POST Response : url=https://api-inference.huggingface.co/models/gpt2 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 14 Feb 2025 06:52:55 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-allow-credentials': 'true', 'x-inference-time': '9024', 'x-compute-type': 'cpu', 'x-sha': '607a30d783dfa663caf39e06633721c8d4cfcd7e', 'x-request-id': 'n-qL4N', 'x-validation-time': '0', 'x-compute-characters': '29', 'x-time-per-token': '20', 'x-total-time': '9025', 'vary': 'origin, access-control-request-method, access-control-request-headers, Origin, Access-Control-Request-Method, Access-Control-Request-Headers, origin, access-control-request-method, access-control-request-headers', 'access-control-allow-origin': '*', 'x-queue-time': '0', 'x-compute-time': '9.025205706', 'x-generated-tokens': '448', 'x-prompt-tokens': '8', 'x-proxied-host': 'internal.api-inference.huggingface.co', 'x-proxied-path': '/'} 
+ body=[{"generated_text":"\"Generate a python testcase.\" The testcase is very easily put into account by progressing to a the checkout process and repeating the previous steps.\n\nPython checker should add a new testcase to\n\n./nsaur-scache.py\n\nWhile ensuring that the various tests activate by publishing the requirements they have in place is important, testing the dependencies equals well with the requirements of the project.\n\nHow a Apache playground produces cross-compilation\n\nAs mentioned previously, WebM can make C directly compile for integration with Arch. There are and are trends in cross-compilation with the production release of Mesosphere. When experimenting with the API or playing raster mapped heavy web servers, it has clear advantages:\n\nProfessionally minimal boilerplate code.\n\nDecent effortless integration.\n\nA typical DSL interface is very similar to any other .NET framework.\n\nIn Java language, particular serialization is fast and automated and could be of great benefit to org.apache.mavenk.core :\n\nimport org.rpmcache as req mutable 1 req mutable\n\nBut, the difference of org.rpmcache and the outstanding JVM-compatible Scala base allow backward compatibility.\n\nHow cross compilation works\n Bennett and their core developers put together the following beautiful tests that encompass cross-caching with apache gem maven. Along with testing several scenarios with either a premake DSL server, an apache client (.org or .git) browser, or just the most basic top-level api. 37 issues spin out every third generation of the data files (from Rast which could be built on top of the apache gem ) which is interesting to clarify: 9iry.ms of code produces a bobblehead .csv of developments accessed as if according to language license or examples. 49 issues spin out every third generation of the missing data files (from DeathWise unit tests required splitting any of the apache servers as users). Neon rates configuration deobfuscator pods to only access the files they need for a certain particular application.\n\nAnd as I am sure you can see from that reduced test suite, mocking interfaces much higher than monolithic approach..."}] 
+ </msg>
+<msg time="2025-02-14T12:22:55.177341" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${URL}</arg>
+<arg>json=${data}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2025-02-14T12:22:43.893149" elapsed="11.284192"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-14T12:22:55.181342" level="INFO">[{'generated_text': '"Generate a python testcase." The testcase is very easily put into account by progressing to a the checkout process and repeating the previous steps.\n\nPython checker should add a new testcase to\n\n./nsaur-scache.py\n\nWhile ensuring that the various tests activate by publishing the requirements they have in place is important, testing the dependencies equals well with the requirements of the project.\n\nHow a Apache playground produces cross-compilation\n\nAs mentioned previously, WebM can make C directly compile for integration with Arch. There are and are trends in cross-compilation with the production release of Mesosphere. When experimenting with the API or playing raster mapped heavy web servers, it has clear advantages:\n\nProfessionally minimal boilerplate code.\n\nDecent effortless integration.\n\nA typical DSL interface is very similar to any other .NET framework.\n\nIn Java language, particular serialization is fast and automated and could be of great benefit to org.apache.mavenk.core :\n\nimport org.rpmcache as req mutable 1 req mutable\n\nBut, the difference of org.rpmcache and the outstanding JVM-compatible Scala base allow backward compatibility.\n\nHow cross compilation works\n Bennett and their core developers put together the following beautiful tests that encompass cross-caching with apache gem maven. Along with testing several scenarios with either a premake DSL server, an apache client (.org or .git) browser, or just the most basic top-level api. 37 issues spin out every third generation of the data files (from Rast which could be built on top of the apache gem ) which is interesting to clarify: 9iry.ms of code produces a bobblehead .csv of developments accessed as if according to language license or examples. 49 issues spin out every third generation of the missing data files (from DeathWise unit tests required splitting any of the apache servers as users). Neon rates configuration deobfuscator pods to only access the files they need for a certain particular application.\n\nAnd as I am sure you can see from that reduced test suite, mocking interfaces much higher than monolithic approach...'}]</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-14T12:22:55.179390" elapsed="0.001952"/>
+</kw>
+<status status="PASS" start="2025-02-14T12:22:43.888169" elapsed="11.295176"/>
+</test>
+<status status="PASS" start="2025-02-14T12:22:43.180715" elapsed="12.005676"/>
+</suite>
+<status status="PASS" start="2025-02-14T12:22:43.155034" elapsed="12.035308"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robotframework--AI-POC" id="s1" pass="1" fail="0" skip="0">Robotframework--AI-POC</stat>
+<stat name="HuggingFace" id="s1-s1" pass="1" fail="0" skip="0">Robotframework--AI-POC.HuggingFace</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
