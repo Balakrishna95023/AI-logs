@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.6 on win32)" generated="2025-02-14T10:45:27.503403" rpa="false" schemaversion="5">
+<suite id="s1" name="Robotframework--AI-POC" source="C:\pycharmRobot\Robotframework--AI-POC">
+<suite id="s1-s1" name="AIExceptionHandler" source="C:\pycharmRobot\Robotframework--AI-POC\AIExceptionHandler.robot">
+<test id="s1-s1-t1" name="AI-Based Self-Healing Test" line="16">
+<kw name="Run Keyword And Handle AI Exception">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Google And Click Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-14T10:45:38.389527" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-14T10:45:38.388390" elapsed="68.346301"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-14T10:46:46.735844" elapsed="0.039437"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-14T10:46:46.779280" level="INFO">Clicking element '//a[text()='Signin']'.</msg>
+<msg time="2025-02-14T10:46:47.132172" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-14T10:46:47.133171" level="FAIL">Element with locator '//a[text()='Signin']' not found.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-14T10:46:46.775281" elapsed="0.366709">Element with locator '//a[text()='Signin']' not found.</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-14T10:46:47.143019" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-02-14T10:46:47.144028" elapsed="0.000000"/>
+</kw>
+<doc>Open Google and click the login button.</doc>
+<status status="FAIL" start="2025-02-14T10:45:38.388390" elapsed="68.756639">Element with locator '//a[text()='Signin']' not found.</status>
+</kw>
+<msg time="2025-02-14T10:46:47.145029" level="INFO">${result} = ('FAIL', "Element with locator '//a[text()='Signin']' not found.")</msg>
+<var>${result}</var>
+<arg>${test_keyword}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-02-14T10:45:38.387167" elapsed="68.757862"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-14T10:46:47.147351" level="INFO">${status} = FAIL</msg>
+<var>${status}</var>
+<arg>${result}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-14T10:46:47.146341" elapsed="0.001010"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-14T10:46:47.149547" level="INFO">${error_message} = Element with locator '//a[text()='Signin']' not found.</msg>
+<var>${error_message}</var>
+<arg>${result}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-14T10:46:47.148518" elapsed="0.001029"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; != &quot;True&quot;">
+<kw name="Handle Error" owner="AIExceptionHandler">
+<msg time="2025-02-14T10:47:02.860531" level="INFO">📨 Sending error message to GPT-2 for debugging...
+✅ AI Suggested Fix: The user has a "Login Failed"
+🛠️ Updating test script: AIExceptionHandler.robot
+✅ Test script updated successfully!</msg>
+<msg time="2025-02-14T10:47:02.862779" level="INFO">${suggestion} = The user has a "Login Failed"</msg>
+<var>${suggestion}</var>
+<arg>${error_message}</arg>
+<arg>${test_file}</arg>
+<doc>Sends error details to GPT-2, gets suggestions, and updates the test file.</doc>
+<status status="PASS" start="2025-02-14T10:46:47.150740" elapsed="15.712039"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-14T10:47:02.863779" level="INFO">AI Suggested Fix: The user has a "Login Failed"</msg>
+<arg>AI Suggested Fix: ${suggestion}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-14T10:47:02.863779" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2025-02-14T10:46:47.149547" elapsed="15.715233"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Test passed successfully!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-14T10:47:02.864780" elapsed="0.001001"/>
+</kw>
+<status status="NOT RUN" start="2025-02-14T10:47:02.864780" elapsed="0.001001"/>
+</branch>
+<status status="PASS" start="2025-02-14T10:46:47.149547" elapsed="15.716234"/>
+</if>
+<arg>${TEST_CASE_NAME}</arg>
+<arg>${TEST_FILE}</arg>
+<status status="PASS" start="2025-02-14T10:45:38.385131" elapsed="84.480650"/>
+</kw>
+<doc>Runs a test, uses AI for debugging, and auto-fixes errors.</doc>
+<status status="PASS" start="2025-02-14T10:45:38.382759" elapsed="84.484020"/>
+</test>
+<status status="PASS" start="2025-02-14T10:45:27.538399" elapsed="95.340674"/>
+</suite>
+<status status="PASS" start="2025-02-14T10:45:27.508402" elapsed="95.373011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robotframework--AI-POC" id="s1" pass="1" fail="0" skip="0">Robotframework--AI-POC</stat>
+<stat name="AIExceptionHandler" id="s1-s1" pass="1" fail="0" skip="0">Robotframework--AI-POC.AIExceptionHandler</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
