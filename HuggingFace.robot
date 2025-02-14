@@ -2,7 +2,7 @@
 Library    RequestsLibrary
 *** Variables ***
 ${key}    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
-${URL}    https://api-inference.huggingface.co/models/facebook/opt-1.3b
+${URL}    https://api-inference.huggingface.co/models/gpt2
 
 *** Test Cases ***
 Test Hugging face AI
